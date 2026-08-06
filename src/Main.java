@@ -9,14 +9,13 @@ public class Main {
         String payerName = "Riya";
         double totalAmount = 500.0;
         int numFriends = 3;
-
-        System.out.println(payerName);
-        System.out.println(totalAmount);
-        System.out.println(numFriends);
-
         double perPersonShare = totalAmount / numFriends;
 
-        System.out.println(perPersonShare);
+        String expenseLine = payerName + " paid ₹" + totalAmount;
+        String shareLine = "Each person pays: " + perPersonShare;
+
+        System.out.println(expenseLine);
+        System.out.println(shareLine);
 
     }
 

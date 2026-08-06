@@ -49,7 +49,7 @@ public class Main {
                     } else {
                         System.out.println("Friends:");
                         for (Friend friend : friends) {
-                            System.out.println("- " + friend.getName());
+                            System.out.println("- %d: %s".formatted(friend.getId(), friend.getName()));
                         }
                     }
                 }
@@ -65,7 +65,8 @@ public class Main {
     public static void addFriend(Scanner input, ArrayList<Friend> friends) {
         System.out.print("Friend name: ");
         String friendName = input.nextLine();
-        friends.add(new Friend(friendName));
-        System.out.println("Added " + friendName + ".");
+        Friend friend = new Friend(friendName);
+        friends.add(friend);
+        System.out.println("Added %s (id %d).".formatted(friend.getName(), friend.getId()));
     }
 }

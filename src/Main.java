@@ -31,8 +31,12 @@ public class Main {
                         String payerName = input.nextLine();
                         System.out.print("Total amount (₹)? ");
                         double totalAmount = input.nextDouble();
-                        double perPersonShare = totalAmount / numFriends;
-                        String expenseLine = "%s paid ₹%.2f".formatted(payerName, totalAmount);
+
+                        Expense expense = new Expense(payerName, totalAmount);
+
+                        double perPersonShare = expense.getAmount() / numFriends;
+                        String expenseLine = "%s paid ₹%.2f".formatted(
+                                expense.getPayerName(), expense.getAmount());
                         String shareLine = "Each person pays: %.2f".formatted(perPersonShare);
                         System.out.println(expenseLine);
                         System.out.println(shareLine);

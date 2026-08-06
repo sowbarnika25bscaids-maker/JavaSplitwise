@@ -6,6 +6,8 @@ public class Main {
         double totalAmount = 500.0;
         int numFriends = 3;
 
+        double amountPerFriend = totalAmount / numFriends;
+
         System.out.println("=== Splitwise Console ===");
         System.out.println("Track shared expenses with friends.");
         System.out.println("Ready. More features coming in the next lessons.");
@@ -13,6 +15,7 @@ public class Main {
         System.out.println("Payer Name: " + payerName);
         System.out.println("Total Amount: " + totalAmount);
         System.out.println("Number of Friends: " + numFriends);
+        System.out.println("Amount Per Friend: " + amountPerFriend);
 
     }
 

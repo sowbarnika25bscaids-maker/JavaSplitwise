@@ -38,12 +38,7 @@ public class Main {
                         System.out.println(shareLine);
                     }
                 }
-                case 2 -> {
-                    System.out.print("Friend name: ");
-                    String friendName = input.nextLine();
-                    friends.add(friendName);
-                    System.out.println("Added " + friendName + ".");
-                }
+                case 2 -> addFriend(input, friends);
                 case 3 -> {
                     if (friends.isEmpty()) {
                         System.out.println("No friends yet.");
@@ -61,5 +56,12 @@ public class Main {
                 default -> System.out.println("Invalid choice. Try again.");
             }
         }
+    }
+
+    public static void addFriend(Scanner input, ArrayList<String> friends) {
+        System.out.print("Friend name: ");
+        String friendName = input.nextLine();
+        friends.add(friendName);
+        System.out.println("Added " + friendName + ".");
     }
 }

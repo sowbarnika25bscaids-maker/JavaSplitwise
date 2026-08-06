@@ -8,7 +8,7 @@ public class Main {
         System.out.println("Ready. More features coming in the next lessons.");
 
         Scanner input = new Scanner(System.in);
-        ArrayList<String> friends = new ArrayList<>();
+        ArrayList<Friend> friends = new ArrayList<>();
         boolean running = true;
 
         while (running) {
@@ -44,8 +44,8 @@ public class Main {
                         System.out.println("No friends yet.");
                     } else {
                         System.out.println("Friends:");
-                        for (String name : friends) {
-                            System.out.println("- " + name);
+                        for (Friend friend : friends) {
+                            System.out.println("- " + friend.getName());
                         }
                     }
                 }
@@ -58,10 +58,10 @@ public class Main {
         }
     }
 
-    public static void addFriend(Scanner input, ArrayList<String> friends) {
+    public static void addFriend(Scanner input, ArrayList<Friend> friends) {
         System.out.print("Friend name: ");
         String friendName = input.nextLine();
-        friends.add(friendName);
+        friends.add(new Friend(friendName));
         System.out.println("Added " + friendName + ".");
     }
 }

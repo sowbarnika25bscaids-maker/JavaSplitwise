@@ -5,7 +5,14 @@ import java.util.Scanner;
 import model.ExpenseLine;
 import model.Friend;
 
+/**
+ * Splitwise console application for tracking shared expenses with friends.
+ */
 public class Main {
+    /**
+     * Starts the Splitwise console application and runs the menu loop.
+     * @param args command-line arguments (not used)
+     */
     public static void main(String[] args) {
         System.out.println("=== Splitwise Console ===");
         System.out.println("Track shared expenses with friends.");
@@ -66,6 +73,11 @@ public class Main {
         }
     }
 
+    /**
+     * Prompts for a friend name and adds a new {@link Friend} to the list.
+     * @param input the scanner used to read the friend's name
+     * @param friends the list to which the new friend is appended
+     */
     public static void addFriend(Scanner input, ArrayList<Friend> friends) {
         System.out.print("Friend name: ");
         String friendName = input.nextLine();
@@ -74,6 +86,7 @@ public class Main {
         System.out.println(FriendDisplay.addedMessage(friend));
     }
 
+    // Private helper — not documented (not part of public API).
     private static class FriendDisplay {
         static String listLine(Friend friend) {
             return "- %d: %s".formatted(friend.getId(), friend.getName());
